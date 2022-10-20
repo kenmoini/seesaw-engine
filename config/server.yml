@@ -1,0 +1,32 @@
+---
+seesaw:
+  config:
+    pki:
+      basepath: /path/to/cert-root
+      signer:
+        keysize: 2048
+        validity: 3650
+        commonName: "some server signer"
+      clients:
+        keysize: 2048
+        validity: 365
+  server:
+    host: 0.0.0.0
+    port: 42069
+    protocol: http
+    tls:
+      cert: /path/to/cert.pem
+      key: /path/to/key.pem
+      ca: /path/to/ca.pem
+    timeout:
+      server: 60
+      write: 60
+      read: 60
+      idle: 60
+  database:
+    type: mysql
+    host: mysql-server.example.com
+    port: 3306
+    database: seesaw
+    username: root
+    password: dbpass

@@ -1,4 +1,4 @@
-package server
+package startup
 
 import (
 	"context"
@@ -11,7 +11,8 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/kenmoini/seesaw-server/internal/logging"
+	"github.com/kenmoini/seesaw-engine/internal/logging"
+	"github.com/kenmoini/seesaw-engine/internal/server"
 )
 
 // RunHTTPServer will run the HTTP Server
@@ -30,7 +31,7 @@ func (config Config) RunHTTPServer() {
 	// Define server options
 	server := &http.Server{
 		Addr:         config.Seesaw.Server.Host + ":" + config.Seesaw.Server.Port,
-		Handler:      NewRouter(config.Seesaw.Server.BasePath),
+		Handler:      server.NewRouter(config.Seesaw.Server.BasePath),
 		ReadTimeout:  config.Seesaw.Server.Timeout.Read * time.Second,
 		WriteTimeout: config.Seesaw.Server.Timeout.Write * time.Second,
 		IdleTimeout:  config.Seesaw.Server.Timeout.Idle * time.Second,

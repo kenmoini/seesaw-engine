@@ -4,7 +4,7 @@ import "time"
 
 const (
 	// AppName is the name of the application
-	AppName = "seesaw-server"
+	AppName = "seesaw-engine"
 	// AppVersion is the version of the application
 	AppVersion = "0.0.1"
 	// DefaultBasePath is the base path for the application API
@@ -23,6 +23,8 @@ type Seesaw struct {
 
 // Config is the structure that houses the general configuration
 type Config struct {
+	// Mode is the mode that the application is running in, can be "server", "agent", or "hybrid"
+	Mode string `json:"mode"`
 	// PKI is the structure that houses the PKI configuration
 	PKI PKI `json:"pki,omitempty"`
 }

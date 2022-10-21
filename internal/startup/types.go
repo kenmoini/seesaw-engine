@@ -1,7 +1,7 @@
-package server
+package startup
 
 import (
-	"github.com/kenmoini/seesaw-server/internal/config"
+	"github.com/kenmoini/seesaw-engine/internal/config"
 )
 
 // CLIOpts contains the CLI options

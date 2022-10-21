@@ -1,6 +1,7 @@
 ---
 seesaw:
   config:
+    mode: server
     pki:
       basepath: /path/to/cert-root
       signer:

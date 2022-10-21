@@ -1,5 +1,10 @@
 # API Endpoints
 
+- [GET] /health
+- [GET] /api/v1/register/{uuid}
+- [POST] /api/v1/register
+- [GET] /api/v1/configure/{uuid}
+
 ## GET /health
 
 Returns the health of the server.
